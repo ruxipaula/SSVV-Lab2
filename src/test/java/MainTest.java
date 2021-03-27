@@ -35,7 +35,7 @@ public class MainTest {
         try {
             stsrv.add(params);
 
-            Assert.assertEquals(stsrv.getSize(), 0);
+            Assert.fail();
         } catch (ValidatorException e) {
             e.printStackTrace();
         }
