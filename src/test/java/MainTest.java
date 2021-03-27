@@ -18,23 +18,184 @@ public class MainTest {
     }
 
     @Test
-    public void tc_1_AddStudentSuccess() {
-        String[] params={"1","Student 1","333","student1@mail.com","Prof 1"};
+    public void tc_1_addStudent_groupValidInteger() {
+        String[] params = {"1", "Student 1", "936", "student1@mail.com", "Prof 1"};
         try {
             stsrv.add(params);
-
             Assert.assertEquals(stsrv.getSize(), 1);
+        } catch (ValidatorException e) {
+            e.printStackTrace();
+            Assert.fail();
+        }
+    }
+
+    @Test
+    public void tc_2_addStudent_groupInvalidInteger() {
+        String[] params = {"1", "Student 1", "abc", "student1@mail.com", "Prof 1"};
+        try {
+            stsrv.add(params);
+            Assert.fail();
         } catch (ValidatorException e) {
             e.printStackTrace();
         }
     }
 
     @Test
-    public void tc_1_AddStudentFailed() {
-        String[] params={"1","Student 1","abc","student1@mail.com","Prof 1"};
+    public void tc_3_addStudent_groupValidRange() {
+        String[] params = {"1", "Student 1", "911", "student1@mail.com", "Prof 1"};
         try {
             stsrv.add(params);
+            Assert.assertEquals(stsrv.getSize(), 1);
+        } catch (ValidatorException e) {
+            e.printStackTrace();
+            Assert.fail();
+        }
+    }
 
+    @Test
+    public void tc_4_addStudent_groupInvalidRange() {
+        String[] params = {"1", "Student 1", "-4", "student1@mail.com", "Prof 1"};
+        try {
+            stsrv.add(params);
+            Assert.fail();
+        } catch (ValidatorException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void tc_5_addStudent_idValid() {
+        String[] params = {"1", "Student 1", "911", "student1@mail.com", "Prof 1"};
+        try {
+            stsrv.add(params);
+            Assert.assertEquals(stsrv.getSize(), 1);
+        } catch (ValidatorException e) {
+            e.printStackTrace();
+            Assert.fail();
+        }
+    }
+
+    @Test
+    public void tc_6_addStudent_idInvalid() {
+        String[] params = {"", "Student 1", "911", "student1@mail.com", "Prof 1"};
+        try {
+            stsrv.add(params);
+            Assert.fail();
+        } catch (ValidatorException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void tc_7_addStudent_nameValid() {
+        String[] params = {"1", "James", "911", "student1@mail.com", "Prof 1"};
+        try {
+            stsrv.add(params);
+            Assert.assertEquals(stsrv.getSize(), 1);
+        } catch (ValidatorException e) {
+            e.printStackTrace();
+            Assert.fail();
+        }
+    }
+
+    @Test
+    public void tc_8_addStudent_nameInvalid() {
+        String[] params = {"1", "", "911", "student1@mail.com", "Prof 1"};
+        try {
+            stsrv.add(params);
+            Assert.fail();
+        } catch (ValidatorException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void tc_9_addStudent_emailValid() {
+        String[] params = {"1", "Student 1", "911", "adipopa9910@gmail.com", "Prof 1"};
+        try {
+            stsrv.add(params);
+            Assert.assertEquals(stsrv.getSize(), 1);
+        } catch (ValidatorException e) {
+            e.printStackTrace();
+            Assert.fail();
+        }
+    }
+
+    @Test
+    public void tc_10_addStudent_emailInvalid() {
+        String[] params = {"1", "Student 1", "911", "", "Prof 1"};
+        try {
+            stsrv.add(params);
+            Assert.fail();
+        } catch (ValidatorException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void tc_11_addStudent_groupValid_BVA1() {
+        String[] params = {"1", "Student 1", "1", "student1@mail.com", "Prof 1"};
+        try {
+            stsrv.add(params);
+            Assert.assertEquals(stsrv.getSize(), 1);
+        } catch (ValidatorException e) {
+            e.printStackTrace();
+            Assert.fail();
+        }
+    }
+
+    @Test
+    public void tc_12_addStudent_groupValid_BVA2() {
+        String[] params = {"1", "Student 1", "2", "student1@mail.com", "Prof 1"};
+        try {
+            stsrv.add(params);
+            Assert.assertEquals(stsrv.getSize(), 1);
+        } catch (ValidatorException e) {
+            e.printStackTrace();
+            Assert.fail();
+        }
+    }
+
+    @Test
+    public void tc_13_addStudent_groupValid_BVA3() {
+        String[] params = {"1", "Student 1", "2147483646", "student1@mail.com", "Prof 1"};
+        try {
+            stsrv.add(params);
+            Assert.assertEquals(stsrv.getSize(), 1);
+        } catch (ValidatorException e) {
+            e.printStackTrace();
+            Assert.fail();
+        }
+    }
+
+    @Test
+    public void tc_14_addStudent_groupValid_BVA4() {
+        String[] params = {"1", "Student 1", "2147483647", "student1@mail.com", "Prof 1"};
+        try {
+            stsrv.add(params);
+            Assert.assertEquals(stsrv.getSize(), 1);
+        } catch (ValidatorException e) {
+            e.printStackTrace();
+            Assert.fail();
+        }
+    }
+
+    @Test
+    public void tc_15_addStudent_groupInvalid_BVA5() {
+        String[] params = {"1", "Student 1", "0", "student1@mail.com", "Prof 1"};
+        try {
+            stsrv.add(params);
+            Assert.fail();
+        } catch (ValidatorException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void tc_16_addStudent_groupInvalid_BVA6() {
+        String[] params = {"1", "Student 1", "2147483648", "student1@mail.com", "Prof 1"};
+        try {
+            stsrv.add(params);
             Assert.fail();
         } catch (ValidatorException e) {
             e.printStackTrace();
