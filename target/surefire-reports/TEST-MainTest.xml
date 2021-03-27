@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="MainTest" time="0.11" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="MainTest" time="0.105" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2020.3.1"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -59,6 +59,6 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="MainTest" name="tc_1_AddStudentFailed" time="0.049"/>
-  <testcase classname="MainTest" name="tc_1_AddStudentSuccess" time="0.061"/>
+  <testcase classname="MainTest" name="tc_1_AddStudentFailed" time="0.045"/>
+  <testcase classname="MainTest" name="tc_1_AddStudentSuccess" time="0.06"/>
 </testsuite>
