@@ -2,8 +2,8 @@ import Exceptions.ValidatorException;
 import Repository.XMLFileRepository.StudentXMLRepo;
 import Service.XMLFileService.StudentXMLService;
 import Validator.StudentValidator;
-
-import org.junit.*;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class MainTest {
 
@@ -133,7 +133,18 @@ public class MainTest {
     }
 
     @Test
-    public void tc_11_addStudent_groupValid_BVA1() {
+    public void tc_11_addStudent_groupInvalid_BVA1() {
+        String[] params = {"1", "Student 1", "0", "student1@mail.com", "Prof 1"};
+        try {
+            stsrv.add(params);
+            Assert.fail();
+        } catch (ValidatorException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void tc_12_addStudent_groupValid_BVA2() {
         String[] params = {"1", "Student 1", "1", "student1@mail.com", "Prof 1"};
         try {
             stsrv.add(params);
@@ -145,7 +156,7 @@ public class MainTest {
     }
 
     @Test
-    public void tc_12_addStudent_groupValid_BVA2() {
+    public void tc_13_addStudent_groupValid_BVA3() {
         String[] params = {"1", "Student 1", "2", "student1@mail.com", "Prof 1"};
         try {
             stsrv.add(params);
@@ -157,7 +168,7 @@ public class MainTest {
     }
 
     @Test
-    public void tc_13_addStudent_groupValid_BVA3() {
+    public void tc_14_addStudent_groupValid_BVA4() {
         String[] params = {"1", "Student 1", "2147483646", "student1@mail.com", "Prof 1"};
         try {
             stsrv.add(params);
@@ -169,7 +180,7 @@ public class MainTest {
     }
 
     @Test
-    public void tc_14_addStudent_groupValid_BVA4() {
+    public void tc_15_addStudent_groupValid_BVA5() {
         String[] params = {"1", "Student 1", "2147483647", "student1@mail.com", "Prof 1"};
         try {
             stsrv.add(params);
@@ -177,17 +188,6 @@ public class MainTest {
         } catch (ValidatorException e) {
             e.printStackTrace();
             Assert.fail();
-        }
-    }
-
-    @Test
-    public void tc_15_addStudent_groupInvalid_BVA5() {
-        String[] params = {"1", "Student 1", "0", "student1@mail.com", "Prof 1"};
-        try {
-            stsrv.add(params);
-            Assert.fail();
-        } catch (ValidatorException e) {
-            e.printStackTrace();
         }
     }
 

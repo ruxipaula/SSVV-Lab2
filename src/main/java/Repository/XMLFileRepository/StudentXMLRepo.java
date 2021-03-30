@@ -10,11 +10,11 @@ public class StudentXMLRepo extends AbstractXMLRepo<String, Student> {
     //private String fileName;
 
     public StudentXMLRepo(StudentValidator v, String fileName) {
-        super(v,fileName);
+        super(v, fileName);
     }
 
     @Override
-    protected Element createElementFromEntity(Document document,Student s) {
+    protected Element createElementFromEntity(Document document, Student s) {
         Element root = document.getDocumentElement();
         Element e = document.createElement("student");
         e.appendChild(createElement("id", document, s.getId()));
@@ -27,27 +27,27 @@ public class StudentXMLRepo extends AbstractXMLRepo<String, Student> {
 
 
     @Override
-    protected Student createEntityFromElement(Element studentElement){
-        String id=studentElement
+    protected Student createEntityFromElement(Element studentElement) {
+        String id = studentElement
                 .getAttribute("id");
-        String nume=studentElement
+        String nume = studentElement
                 .getElementsByTagName("nume")
                 .item(0)
                 .getTextContent();
-        String grupa=studentElement
+        String grupa = studentElement
                 .getElementsByTagName("grupa")
                 .item(0)
                 .getTextContent();
-        int gr=Integer.parseInt(grupa);
-        String email=studentElement
+        int gr = Integer.parseInt(grupa);
+        String email = studentElement
                 .getElementsByTagName("email")
                 .item(0)
                 .getTextContent();
-        String prof=studentElement
+        String prof = studentElement
                 .getElementsByTagName("prof")
                 .item(0)
                 .getTextContent();
-        return new Student(id,nume,gr,email,prof);
+        return new Student(id, nume, gr, email, prof);
     }
 
 }

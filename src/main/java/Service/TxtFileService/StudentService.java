@@ -3,9 +3,9 @@ package Service.TxtFileService;
 import Domain.Student;
 import Repository.TxtFileRepository.StudentFileRepo;
 
-public class StudentService extends AbstractService<String,Student> {
+public class StudentService extends AbstractService<String, Student> {
     //StudentFileRepo stdRepo;
-    public StudentService(StudentFileRepo stdRepo){
+    public StudentService(StudentFileRepo stdRepo) {
         super(stdRepo);
     }
     /*

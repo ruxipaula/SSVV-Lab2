@@ -10,11 +10,11 @@ public class TemaLabXMLRepo extends AbstractXMLRepo<Integer, TemaLab> {
     //private String fileName;
 
     public TemaLabXMLRepo(TemaLabValidator v, String fileName) {
-        super(v,fileName);
+        super(v, fileName);
     }
 
     @Override
-    protected Element createElementFromEntity(Document document,TemaLab t) {
+    protected Element createElementFromEntity(Document document, TemaLab t) {
         Element root = document.getDocumentElement();
         Element e = document.createElement("tema");
         e.appendChild(createElement("id", document, t.getId().toString()));
@@ -26,22 +26,22 @@ public class TemaLabXMLRepo extends AbstractXMLRepo<Integer, TemaLab> {
 
 
     @Override
-    protected TemaLab createEntityFromElement(Element temaLabElement){
-        String nr=temaLabElement.getAttribute("nr");
-        String descr=temaLabElement
+    protected TemaLab createEntityFromElement(Element temaLabElement) {
+        String nr = temaLabElement.getAttribute("nr");
+        String descr = temaLabElement
                 .getElementsByTagName("descriere")
                 .item(0)
                 .getTextContent();
-        String sptLim=temaLabElement
+        String sptLim = temaLabElement
                 .getElementsByTagName("saptamanaLimita")
                 .item(0)
                 .getTextContent();
-        String sptPrd=temaLabElement
+        String sptPrd = temaLabElement
                 .getElementsByTagName("saptamanaPredarii")
                 .item(0)
                 .getTextContent();
 
-        return new TemaLab(Integer.parseInt(nr),descr,Integer.parseInt(sptLim),Integer.parseInt(sptPrd));
+        return new TemaLab(Integer.parseInt(nr), descr, Integer.parseInt(sptLim), Integer.parseInt(sptPrd));
     }
 
 }

@@ -11,12 +11,12 @@ public class Nota implements HasId<Integer> {
     private double valoare;
     private LocalDateTime ldt;
 
-    public  Nota(Integer idNota,String studentId,Integer temaLabId,double valoare,LocalDateTime ldt){
-        this.idNota=idNota;
-        this.studentId=studentId;
-        this.temaLabId=temaLabId;
-        this.valoare=valoare;
-        this.ldt=ldt;
+    public Nota(Integer idNota, String studentId, Integer temaLabId, double valoare, LocalDateTime ldt) {
+        this.idNota = idNota;
+        this.studentId = studentId;
+        this.temaLabId = temaLabId;
+        this.valoare = valoare;
+        this.ldt = ldt;
     }
 
     @Override
@@ -26,7 +26,7 @@ public class Nota implements HasId<Integer> {
 
     @Override
     public void setId(Integer id) {
-        this.idNota=id;
+        this.idNota = id;
     }
 
     public String getStudentId() {
@@ -62,7 +62,7 @@ public class Nota implements HasId<Integer> {
     }
 
     @Override
-    public String toString(){
-        return this.idNota+"#"+this.studentId+"#"+this.temaLabId+"#"+this.valoare+"#"+this.ldt;
+    public String toString() {
+        return this.idNota + "#" + this.studentId + "#" + this.temaLabId + "#" + this.valoare + "#" + this.ldt;
     }
 }
