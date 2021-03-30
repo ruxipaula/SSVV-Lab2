@@ -29,15 +29,10 @@ public class MainTest {
         }
     }
 
-    @Test
-    public void tc_2_addStudent_groupInvalidInteger() {
+    @Test(expected = ValidatorException.class)
+    public void tc_2_addStudent_groupInvalidInteger() throws ValidatorException {
         String[] params = {"1", "Student 1", "abc", "student1@mail.com", "Prof 1"};
-        try {
-            stsrv.add(params);
-            Assert.fail();
-        } catch (ValidatorException e) {
-            e.printStackTrace();
-        }
+        stsrv.add(params);
     }
 
     @Test
@@ -52,15 +47,10 @@ public class MainTest {
         }
     }
 
-    @Test
-    public void tc_4_addStudent_groupInvalidRange() {
+    @Test(expected = ValidatorException.class)
+    public void tc_4_addStudent_groupInvalidRange() throws ValidatorException {
         String[] params = {"1", "Student 1", "-4", "student1@mail.com", "Prof 1"};
-        try {
-            stsrv.add(params);
-            Assert.fail();
-        } catch (ValidatorException e) {
-            e.printStackTrace();
-        }
+        stsrv.add(params);
     }
 
     @Test
@@ -75,15 +65,10 @@ public class MainTest {
         }
     }
 
-    @Test
-    public void tc_6_addStudent_idInvalid() {
+    @Test(expected = ValidatorException.class)
+    public void tc_6_addStudent_idInvalid() throws ValidatorException {
         String[] params = {"", "Student 1", "911", "student1@mail.com", "Prof 1"};
-        try {
-            stsrv.add(params);
-            Assert.fail();
-        } catch (ValidatorException e) {
-            e.printStackTrace();
-        }
+        stsrv.add(params);
     }
 
     @Test
@@ -98,15 +83,10 @@ public class MainTest {
         }
     }
 
-    @Test
-    public void tc_8_addStudent_nameInvalid() {
+    @Test(expected = ValidatorException.class)
+    public void tc_8_addStudent_nameInvalid() throws ValidatorException {
         String[] params = {"1", "", "911", "student1@mail.com", "Prof 1"};
-        try {
-            stsrv.add(params);
-            Assert.fail();
-        } catch (ValidatorException e) {
-            e.printStackTrace();
-        }
+        stsrv.add(params);
     }
 
     @Test
@@ -121,26 +101,16 @@ public class MainTest {
         }
     }
 
-    @Test
-    public void tc_10_addStudent_emailInvalid() {
+    @Test(expected = ValidatorException.class)
+    public void tc_10_addStudent_emailInvalid() throws ValidatorException {
         String[] params = {"1", "Student 1", "911", "", "Prof 1"};
-        try {
-            stsrv.add(params);
-            Assert.fail();
-        } catch (ValidatorException e) {
-            e.printStackTrace();
-        }
+        stsrv.add(params);
     }
 
-    @Test
-    public void tc_11_addStudent_groupInvalid_BVA1() {
+    @Test(expected = ValidatorException.class)
+    public void tc_11_addStudent_groupInvalid_BVA1() throws ValidatorException {
         String[] params = {"1", "Student 1", "0", "student1@mail.com", "Prof 1"};
-        try {
-            stsrv.add(params);
-            Assert.fail();
-        } catch (ValidatorException e) {
-            e.printStackTrace();
-        }
+        stsrv.add(params);
     }
 
     @Test
@@ -191,14 +161,9 @@ public class MainTest {
         }
     }
 
-    @Test
-    public void tc_16_addStudent_groupInvalid_BVA6() {
+    @Test(expected = ValidatorException.class)
+    public void tc_16_addStudent_groupInvalid_BVA6() throws ValidatorException {
         String[] params = {"1", "Student 1", "2147483648", "student1@mail.com", "Prof 1"};
-        try {
-            stsrv.add(params);
-            Assert.fail();
-        } catch (ValidatorException e) {
-            e.printStackTrace();
-        }
+        stsrv.add(params);
     }
 }

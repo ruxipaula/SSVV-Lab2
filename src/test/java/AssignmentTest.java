@@ -6,19 +6,19 @@ import Validator.TemaLabValidator;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class AssigmentTest {
+public class AssignmentTest {
     TemaLabValidator vs;
     TemaLabXMLRepo asrepo;
     TemaLabXMLService asarv;
 
-    public AssigmentTest() {
+    public AssignmentTest() {
         vs = new TemaLabValidator();
         asrepo = new TemaLabXMLRepo(vs, "TemaLabiXML.xml");
         asarv = new TemaLabXMLService(asrepo);
     }
 
     @Test
-    public void tc_1_addAssigment_idValid() {
+    public void tc_1_addAssignment_idValid() {
         TemaLab assigment = new TemaLab(1, "Tema 1", 11, 10);
         try {
             asrepo.save(assigment);
@@ -30,7 +30,7 @@ public class AssigmentTest {
     }
 
     @Test(expected = ValidatorException.class)
-    public void tc_2_addAssigment_idInvalid() throws ValidatorException {
+    public void tc_2_addAssignment_idInvalid() throws ValidatorException {
         TemaLab assigment = new TemaLab(null, "Tema 1", 11, 10);
         asrepo.save(assigment);
     }
