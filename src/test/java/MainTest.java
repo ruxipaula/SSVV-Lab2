@@ -24,7 +24,6 @@ public class MainTest {
             stsrv.add(params);
             Assert.assertEquals(stsrv.getSize(), 1);
         } catch (ValidatorException e) {
-            e.printStackTrace();
             Assert.fail();
         }
     }
@@ -42,7 +41,6 @@ public class MainTest {
             stsrv.add(params);
             Assert.assertEquals(stsrv.getSize(), 1);
         } catch (ValidatorException e) {
-            e.printStackTrace();
             Assert.fail();
         }
     }
@@ -60,7 +58,6 @@ public class MainTest {
             stsrv.add(params);
             Assert.assertEquals(stsrv.getSize(), 1);
         } catch (ValidatorException e) {
-            e.printStackTrace();
             Assert.fail();
         }
     }
@@ -78,7 +75,6 @@ public class MainTest {
             stsrv.add(params);
             Assert.assertEquals(stsrv.getSize(), 1);
         } catch (ValidatorException e) {
-            e.printStackTrace();
             Assert.fail();
         }
     }
@@ -96,7 +92,6 @@ public class MainTest {
             stsrv.add(params);
             Assert.assertEquals(stsrv.getSize(), 1);
         } catch (ValidatorException e) {
-            e.printStackTrace();
             Assert.fail();
         }
     }
@@ -120,7 +115,6 @@ public class MainTest {
             stsrv.add(params);
             Assert.assertEquals(stsrv.getSize(), 1);
         } catch (ValidatorException e) {
-            e.printStackTrace();
             Assert.fail();
         }
     }
@@ -132,7 +126,6 @@ public class MainTest {
             stsrv.add(params);
             Assert.assertEquals(stsrv.getSize(), 1);
         } catch (ValidatorException e) {
-            e.printStackTrace();
             Assert.fail();
         }
     }
@@ -144,7 +137,6 @@ public class MainTest {
             stsrv.add(params);
             Assert.assertEquals(stsrv.getSize(), 1);
         } catch (ValidatorException e) {
-            e.printStackTrace();
             Assert.fail();
         }
     }
@@ -156,7 +148,6 @@ public class MainTest {
             stsrv.add(params);
             Assert.assertEquals(stsrv.getSize(), 1);
         } catch (ValidatorException e) {
-            e.printStackTrace();
             Assert.fail();
         }
     }

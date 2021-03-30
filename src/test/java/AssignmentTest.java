@@ -24,7 +24,6 @@ public class AssignmentTest {
             asrepo.save(assigment);
             Assert.assertEquals(asarv.getSize(), 1);
         } catch (ValidatorException e) {
-            e.printStackTrace();
             Assert.fail();
         }
     }
