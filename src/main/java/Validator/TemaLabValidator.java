@@ -12,7 +12,7 @@ public class TemaLabValidator implements IValidator<TemaLab> {
         if (t.getDescriere() == null || t.getDescriere().equals("")) {
             throw new ValidatorException("Descriere tema invalida\n");
         }
-        if (t.getSaptammanaPredarii() <= 0 || t.getSaptammanaPredarii() > 14) {
+        if (t.getSaptamanaPredarii() <= 0 || t.getSaptamanaPredarii() > 14) {
             throw new ValidatorException("Sapatamana predarii invalida\n");
         }
         if (t.getTermenLimita() <= 0 || t.getTermenLimita() > 14) {
