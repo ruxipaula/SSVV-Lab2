@@ -78,8 +78,19 @@ public class GradeTest {
 
     @Test
     public void tc_4_addGrade_BBI() {
-        tc_1_addStudent_valid();
-        tc_2_addAssignment_valid();
-        tc_3_addGrade_valid();
+        String[] params = {"1", "Student 1", "936", "student1@mail.com", "Prof 1"};
+        TemaLab assigment = new TemaLab(1, "Tema 1", 12, 13);
+        Nota grade = new Nota(1, "1", 1, 9, LocalDateTime.of(2015, Month.JULY, 29, 19, 30, 40));
+        try {
+            stsrv.add(params);
+            tlrepo.save(assigment);
+            nrepo.save(grade);
+
+            Assert.assertEquals(stsrv.getSize(), 1);
+            Assert.assertEquals(tlsrv.getSize(), 1);
+            Assert.assertEquals(nsrv.getSize(), 1);
+        } catch (ValidatorException e) {
+            Assert.fail();
+        }
     }
 }
