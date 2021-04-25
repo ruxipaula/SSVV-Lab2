@@ -93,4 +93,21 @@ public class GradeTest {
             Assert.fail();
         }
     }
+
+    @Test
+    public void tc_5_addStudent_incrementalIntegration() {
+        tc_1_addStudent_valid();
+    }
+
+    @Test
+    public void tc_6_addAssignment_incrementalIntegration() {
+        tc_5_addStudent_incrementalIntegration();
+        tc_2_addAssignment_valid();
+    }
+
+    @Test
+    public void tc_7_addGrade_incrementalIntegration() {
+        tc_6_addAssignment_incrementalIntegration();
+        tc_3_addGrade_valid();
+    }
 }
